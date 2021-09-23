@@ -10,14 +10,14 @@ const fetchBreed = (breed, func) => {
       func(err, null);
       return;
     }
-    
+
     let data = JSON.parse(body);
     if (!data.length) {
       func('Cat breed not found :(', null);
       return;
     }
     
-    func(null, data[0].description);
+    func(null, data[0].description.trim());
     
   });
 };
